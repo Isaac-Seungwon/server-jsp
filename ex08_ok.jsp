@@ -16,6 +16,7 @@
 	
 	//다중 텍스트 박스
 	String txt3 = request.getParameter("txt3");
+	if (txt3 == null) txt3 ="";
 	txt3 = txt3.replace("\r\n", "<br>");
 	
 	//체크 박스
@@ -50,6 +51,30 @@
 	
 	//라디오 버튼
 	String rb = request.getParameter("rb");
+	
+	//셀렉트 박스
+	String sel1 = request.getParameter("sel1");
+
+	//다중 셀렉트 박스
+	String[] sel2 = request.getParameterValues("sel2");
+
+	//히든 태그
+	String txt4 = request.getParameter("txt4");
+
+	//히든 태그
+	String count = request.getParameter("count");
+	
+	//날짜
+	String regdate = request.getParameter("regdate");
+
+	//범위
+	String min = request.getParameter("min");
+	
+	//색상
+	String color = request.getParameter("color");
+	
+	String id = request.getParameter("id");
+	String pw = request.getParameter("pw");
 %>
 <!DOCTYPE html>
 <html>
@@ -80,6 +105,30 @@
 	
 	<h2>라디오 버튼</h2>
 	<div><%= rb %></div>
+	
+	<h2>셀렉트 박스</h2>
+	<div><%= sel1 %></div>
+	
+	<h2>셀렉트 박스</h2>
+	<div><%= Arrays.toString(sel2) %></div>
+	
+	<h2>히든 태그</h2>
+	<div><%= txt4 %></div>
+	
+	<h2>히든 태그</h2>
+	<div><%= count %>번 클릭!</div>
+	
+	<h2>날짜</h2>
+	<div><%= regdate %></div>
+	
+	<h2>범위</h2>
+	<div><%= min %></div>
+	
+	<h2>색상</h2>
+	<div style="background-color: <%= color %>;"><%= color %></div>
+	
+	<h2>아이디,암호</h2>
+	<div><%= id %>,<%= pw %></div>
 	
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="http://pinnpublic.dothome.co.kr/cdn/example-min.js"></script>
